@@ -1,5 +1,6 @@
 # Importando bibliotecas
 import streamlit as st
+import pandas as pd
 import yfinance as yf
 from prophet import Prophet
 from prophet.plot import plot_plotly
@@ -33,12 +34,12 @@ tickers = {
 @st.cache_data
 def carregar_dados(ticker, dt_inicial, dt_final):
     df = yf.Ticker(ticker).history(
-        start=dt_inicial.strftime("%Y-%m-%d"),
-        end=dt_final.strftime("%Y-%m-%d")
+        start=dt_inicial.strftime('%d/%m/%Y'),
+        end=dt_final.strftime('%d/%m/%Y')
     )
 
     df_tratado = df.loc[:, 'High':'Volume'].copy()
-    df_tratado.index = df_tratado.index.strftime('%Y-%m-%d')
+    df_tratado.index = df_tratado.index.strftime('%d/%m/%Y')
     df_tratado.reset_index(inplace=True)
     df_tratado.columns = ['Data', 'Máximo', 'Mínimo', 'Fechamento', 'Volume']
 
