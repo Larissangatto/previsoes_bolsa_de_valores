@@ -8,8 +8,7 @@ Projeto é uma **aplicação web interativa** que utiliza **Machine Learning** p
 ## Preview
 
 Acesse o projeto publicado / Access the deployed project:
-[ https://previsoesbolsadevalores.streamlit.app/]
-
+https://previsoesbolsadevalores.streamlit.app/
 
 ## 🚀 Tecnologias Utilizadas / Technologies Used
 
